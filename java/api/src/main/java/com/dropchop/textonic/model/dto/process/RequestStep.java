@@ -3,10 +3,7 @@ package com.dropchop.textonic.model.dto.process;
 import com.dropchop.recyclone.model.api.attr.Attribute;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
@@ -42,6 +39,7 @@ public class RequestStep extends AnalysisStepBase implements AnalysisStep {
     description = "Step attributes."
   )
   @JsonInclude(NON_EMPTY)
+  @Singular("attribute")
   private Set<Attribute<?>> attributes;
 
   @Override
