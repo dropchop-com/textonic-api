@@ -28,9 +28,12 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>com.dropchop.recyclone</groupId>
+      <artifactId>recyclone-rest-jackson-client</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.dropchop.textonic</groupId>
       <artifactId>textonic-api</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
