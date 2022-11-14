@@ -197,6 +197,11 @@
         <artifactId>recyclone-rest-jaxrs-api</artifactId>
         <version>${recyclone.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.dropchop.textonic</groupId>
+        <artifactId>textonic-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
 
 
       <dependency>
