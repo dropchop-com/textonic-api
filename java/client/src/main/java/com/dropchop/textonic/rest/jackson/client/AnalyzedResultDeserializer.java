@@ -127,9 +127,9 @@ public class AnalyzedResultDeserializer extends JsonDeserializer<AnalyzedResult<
     JsonNode node = oc.readTree(jp);
 
     AnalyzedResult<?> result;
-    if (node.has("s") && node.has("v")) {
+    if (node.has("score") && node.has("val")) {
       result = fromClassificationResult(node);
-    } else if (node.has("v")) {
+    } else if (node.has("val")) {
       result = fromValueArray(node);
     } else {
       throw new IOException("Undetectable AnalyzedResult type!");

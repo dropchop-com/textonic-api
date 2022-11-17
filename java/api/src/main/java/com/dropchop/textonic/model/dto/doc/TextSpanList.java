@@ -20,7 +20,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @JsonInclude(NON_NULL)
 public class TextSpanList extends TextSpan<List<String>> {
 
-  @JsonProperty("v")
+  @JsonProperty("lv")
   @Schema(
     description = "Context dependent text data."
   )

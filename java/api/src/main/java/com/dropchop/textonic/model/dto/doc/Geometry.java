@@ -1,6 +1,8 @@
 package com.dropchop.textonic.model.dto.doc;
 
 import com.dropchop.recyclone.model.api.base.Dto;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +15,9 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
-public class Geometry implements Dto {
+@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+@JsonSubTypes({ @JsonSubTypes.Type(Polygon.class), @JsonSubTypes.Type(Rect.class)})
+public abstract class Geometry implements Dto {
 
   @Override
   public String toString() {

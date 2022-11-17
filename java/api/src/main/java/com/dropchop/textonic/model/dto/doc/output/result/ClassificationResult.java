@@ -5,6 +5,7 @@ import com.dropchop.textonic.model.api.ml.StepCode;
 import com.dropchop.textonic.model.api.ml.Model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,7 +24,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @JsonInclude(NON_NULL)
 public class ClassificationResult extends TextResult {
 
-  @JsonProperty("s")
+  @JsonProperty("val")
   @Schema(
     description = "Context dependent classification score."
   )
@@ -35,5 +36,10 @@ public class ClassificationResult extends TextResult {
 
   public ClassificationResult(Engine<?> engine, Model model, StepCode stepCode, int size) {
     super(engine, model, stepCode, size);
+  }
+
+  @Override
+  public String getType() {
+    return Type.cls;
   }
 }

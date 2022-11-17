@@ -3,6 +3,8 @@ package com.dropchop.textonic.model.dto.doc.output;
 import com.dropchop.recyclone.model.api.base.Dto;
 import com.dropchop.recyclone.model.api.marker.HasId;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -23,7 +25,9 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @Schema(
   anyOf = {AnalyzedSentence.class}
 )
-public class AnalyzedSegment implements Dto, HasId {
+@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+@JsonSubTypes({ @JsonSubTypes.Type(AnalyzedSentence.class)})
+public abstract class AnalyzedSegment implements Dto, HasId {
 
   @NonNull
   @EqualsAndHashCode.Include

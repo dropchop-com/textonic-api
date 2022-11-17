@@ -1,11 +1,13 @@
 package com.dropchop.textonic.model.dto.doc;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
+import java.util.List;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
@@ -19,11 +21,15 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @Schema(
   anyOf = {TextSpanSimple.class, TextSpanList.class}
 )
-public class TextSpan<V> extends TextPosition {
+@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+@JsonSubTypes(
+  {@Type(TextSpanSimple.class), @Type(TextSpanList.class)}
+)
+public abstract class TextSpan<V> extends TextPosition {
 
   @JsonProperty("i")
   @Schema(
-    description = "Context dependent id."
+    description = "Context dependent id or reference list index."
   )
   private Integer id;
 
@@ -39,6 +45,7 @@ public class TextSpan<V> extends TextPosition {
   )
   private Integer endIndex;
 
-  @JsonProperty("v")
-  private V value;
+  public abstract V getValue();
+
+  public abstract void setValue(V value);
 }

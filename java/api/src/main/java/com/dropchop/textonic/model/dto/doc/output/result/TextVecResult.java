@@ -1,10 +1,11 @@
 package com.dropchop.textonic.model.dto.doc.output.result;
 
 import com.dropchop.textonic.model.api.ml.Engine;
-import com.dropchop.textonic.model.api.ml.StepCode;
 import com.dropchop.textonic.model.api.ml.Model;
+import com.dropchop.textonic.model.api.ml.StepCode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,7 +26,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @JsonInclude(NON_NULL)
 public class TextVecResult extends AnalyzedResult<Double> {
 
-  @JsonProperty("v")
+  @JsonProperty("val")
   @Schema(
     description = "Vector component values."
   )
@@ -41,5 +42,10 @@ public class TextVecResult extends AnalyzedResult<Double> {
 
   public TextVecResult(Engine<?> engine, Model model, StepCode stepCode, int size) {
     super(engine, model, stepCode, size);
+  }
+
+  @Override
+  public String getType() {
+    return Type.vec;
   }
 }

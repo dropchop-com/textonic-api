@@ -1,11 +1,12 @@
 package com.dropchop.textonic.model.dto.doc.output.result;
 
 import com.dropchop.textonic.model.api.ml.Engine;
+import com.dropchop.textonic.model.api.ml.Model;
 import com.dropchop.textonic.model.api.ml.StepCode;
 import com.dropchop.textonic.model.dto.doc.TextSpan;
-import com.dropchop.textonic.model.api.ml.Model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,7 +27,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @JsonInclude(NON_NULL)
 public class TextSpanResult extends AnalyzedResult<TextSpan<?>> {
 
-  @JsonProperty("v")
+  @JsonProperty("val")
   @Schema(
     description = "Text span values."
   )
@@ -38,5 +39,10 @@ public class TextSpanResult extends AnalyzedResult<TextSpan<?>> {
 
   public TextSpanResult(Engine<?> engine, Model model, StepCode stepCode, int size) {
     super(engine, model, stepCode, size);
+  }
+
+  @Override
+  public String getType() {
+    return Type.spn;
   }
 }

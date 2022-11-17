@@ -1,12 +1,12 @@
 package com.dropchop.textonic.model.dto.doc.output.result;
 
 import com.dropchop.recyclone.model.api.base.Dto;
+import com.dropchop.recyclone.model.api.base.ModelWithCode;
 import com.dropchop.textonic.model.api.ml.Engine;
-import com.dropchop.textonic.model.api.ml.StepCode;
 import com.dropchop.textonic.model.api.ml.Model;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.dropchop.textonic.model.api.ml.StepCode;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -29,13 +29,36 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @Schema(
   anyOf = {TextResult.class, TextListResult.class, TextSpanResult.class, TextVecResult.class, ClassificationResult.class}
 )
-public abstract class AnalyzedResult<V> implements Dto {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
+@JsonSubTypes({
+  @Type(value = TextResult.class, name = AnalyzedResult.Type.lt),
+  @Type(value = TextListResult.class, name = AnalyzedResult.Type.llt),
+  @Type(value = TextSpanResult.class, name = AnalyzedResult.Type.spn),
+  @Type(value = TextVecResult.class, name = AnalyzedResult.Type.vec),
+  @Type(value = ClassificationResult.class, name = AnalyzedResult.Type.cls)
+})
+public abstract class AnalyzedResult<V> implements Dto, ModelWithCode {
 
-  @JsonProperty("sem")
+  public interface Type {
+    String lt = "lt";
+    String llt = "llt";
+    String spn = "spn";
+    String vec = "vec";
+    String cls = "cls";
+  }
+
+  @JsonProperty("code")
   @Schema(
     description = "String identifier composed from ModelStep, ML Engine code, ML Model code separated with column."
   )
-  private String semCode;
+  private String code;
+
+
+  @JsonProperty("type")
+  @Schema(
+    description = "Identifier for type of result: discriminator."
+  )
+  private String type;
 
   @JsonIgnore
   @Schema(
@@ -110,7 +133,7 @@ public abstract class AnalyzedResult<V> implements Dto {
   }
 
   public AnalyzedResult(String engineCode, String modelCode, StepCode stepCode, String stepDetail, int size) {
-    this.semCode = StepCode.buildCustomSemCode(
+    this.code = StepCode.buildCustomSemCode(
       engineCode,
       modelCode,
       stepCode == null ? null : List.of(stepCode.name()),
