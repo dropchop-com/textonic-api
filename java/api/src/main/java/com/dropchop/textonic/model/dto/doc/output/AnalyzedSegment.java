@@ -2,7 +2,11 @@ package com.dropchop.textonic.model.dto.doc.output;
 
 import com.dropchop.recyclone.model.api.base.Dto;
 import com.dropchop.recyclone.model.api.marker.HasId;
+import com.dropchop.textonic.model.dto.doc.Geometry;
+import com.dropchop.textonic.model.dto.doc.Polygon;
+import com.dropchop.textonic.model.dto.doc.Rect;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Data;
@@ -35,6 +39,13 @@ public abstract class AnalyzedSegment implements Dto, HasId {
     description = "Synthesized identifier composed of doc uuid, section index and segment index."
   )
   private String id;
+
+  @JsonProperty("g")
+  @Schema(
+    description = "Plane position if available.",
+    anyOf = {Rect.class, Polygon.class}
+  )
+  private Geometry geometry;
 
   @Override
   public String toString() {

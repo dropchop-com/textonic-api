@@ -18,13 +18,13 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @JsonInclude(NON_NULL)
 public class Rect extends Geometry {
 
-  @JsonProperty("x")
+  @JsonProperty("l")
   @Schema(
     description = "Left coordinate."
   )
   private Double left;
 
-  @JsonProperty("y")
+  @JsonProperty("t")
   @Schema(
     description = "Top coordinate."
   )
@@ -44,8 +44,8 @@ public class Rect extends Geometry {
 
   @Override
   public String toString() {
-    return super.toString() + ":x=" + left +
-      ", y=" + top +
+    return super.toString() + ":l=" + left +
+      ", t=" + top +
       ", w=" + width +
       ", h=" + height;
   }

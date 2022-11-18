@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @Schema(
   anyOf = {TextResult.class, TextListResult.class, TextSpanResult.class, TextVecResult.class, ClassificationResult.class}
 )
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "t")
 @JsonSubTypes({
   @Type(value = TextResult.class, name = AnalyzedResult.Type.lt),
   @Type(value = TextListResult.class, name = AnalyzedResult.Type.llt),
@@ -47,14 +47,14 @@ public abstract class AnalyzedResult<V> implements Dto, ModelWithCode {
     String cls = "cls";
   }
 
-  @JsonProperty("code")
+  @JsonProperty("c")
   @Schema(
-    description = "String identifier composed from ModelStep, ML Engine code, ML Model code separated with column."
+    description = "String code identifier composed from ModelStep, ML Engine code, ML Model code separated with column."
   )
   private String code;
 
 
-  @JsonProperty("type")
+  @JsonProperty("t")
   @Schema(
     description = "Identifier for type of result: discriminator."
   )

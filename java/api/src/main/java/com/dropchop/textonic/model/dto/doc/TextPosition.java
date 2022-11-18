@@ -38,4 +38,11 @@ public class TextPosition {
     description = "Text length."
   )
   private Integer length;
+
+  @JsonProperty("g")
+  @Schema(
+    description = "Plane position if available.",
+    anyOf = {Rect.class, Polygon.class}
+  )
+  private Geometry geometry;
 }

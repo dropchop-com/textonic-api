@@ -17,13 +17,23 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @RequiredArgsConstructor
 @JsonInclude(NON_NULL)
 public class AnalysisStats implements Dto {
-  @JsonProperty("sem")
+  @JsonProperty("c")
   @Schema(
-    description = "String identifier composed from ModelStep, ML Engine code, ML Model code separated with column."
+    description = "String code identifier composed from ModelStep, ML Engine code, ML Model code separated with column."
   )
   @NonNull
   private String semCode;
+
+  @JsonProperty("cms")
+  @Schema(
+    description = "Raw computation time excluding trafficking, serialization, preprocessing, ... etc."
+  )
   private long computeMs;
+
+  @JsonProperty("tms")
+  @Schema(
+    description = "Total time taken for a given step."
+  )
   private long totalMs;
 
   public AnalysisStats semCode(String semCode) {
