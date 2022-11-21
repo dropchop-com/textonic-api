@@ -115,7 +115,7 @@ public abstract class AnalyzedResult<V> implements Dto, ModelWithCode {
     return stepDetail;
   }
 
-  public void setSemCode(String semCode) {
+  public void setCode(String semCode) {
     if (semCode != null) {
       String[] segments = semCode.split(":", 3);
       this.stepCode = segments.length >= 1 ? segments[0] : null;
