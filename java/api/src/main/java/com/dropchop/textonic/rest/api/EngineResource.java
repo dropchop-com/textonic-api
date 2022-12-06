@@ -1,17 +1,21 @@
 package com.dropchop.textonic.rest.api;
 
 import com.dropchop.recyclone.model.api.rest.Constants;
+import com.dropchop.recyclone.model.api.security.annotations.RequiresPermissions;
 import com.dropchop.recyclone.model.dto.invoke.CodeParams;
 import com.dropchop.recyclone.model.dto.rest.Result;
 import com.dropchop.recyclone.rest.jaxrs.api.ClassicRestResource;
 import com.dropchop.recyclone.rest.jaxrs.api.DynamicExecContext;
 import com.dropchop.recyclone.rest.jaxrs.api.MediaType;
+import com.dropchop.textonic.model.api.security.Constants.Domains;
 import com.dropchop.textonic.model.dto.ml.Engine;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import javax.ws.rs.*;
 import java.util.List;
 
+import static com.dropchop.recyclone.model.api.security.Constants.*;
+import static com.dropchop.recyclone.model.api.security.Constants.PERM_DELIM;
 import static com.dropchop.textonic.model.api.rest.Constants.Paths.Nlp.Query.ENGINE;
 import static com.dropchop.textonic.model.api.rest.Constants.Tags.ML;
 
@@ -20,6 +24,7 @@ import static com.dropchop.textonic.model.api.rest.Constants.Tags.ML;
  */
 @Path(ENGINE)
 @DynamicExecContext(CodeParams.class)
+@RequiresPermissions(Domains.Ml.ENGINE + PERM_DELIM + Actions.VIEW)
 public interface EngineResource extends ClassicRestResource<Engine>  {
 
   @GET
