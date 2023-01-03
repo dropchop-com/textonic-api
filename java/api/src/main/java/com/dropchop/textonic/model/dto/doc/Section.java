@@ -35,6 +35,7 @@ public abstract class Section implements Dto {
     excerpt,
     conclusion,
     image,
-    video
+    video,
+    unknown
   }
 }

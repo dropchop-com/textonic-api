@@ -8,6 +8,7 @@ public interface Constants {
     interface Ml {
       String ENGINE  = "ml.engine";
       String PROCESS = "ml.process";
+      String UTILS = "ml.utils";
     }
   }
 }

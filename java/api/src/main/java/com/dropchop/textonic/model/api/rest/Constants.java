@@ -21,11 +21,11 @@ public interface Constants {
       }
 
       interface Process {
-        String LANG_DETECT_SEGMENT = "/lang_detect";
         String PROCESS_SEGMENT = "/process";
+        String UTILS_SEGMENT = "/utils";
 
         String PROCESS = ML_SEGMENT + PROCESS_SEGMENT;
-        String LANG_DETECT = ML_SEGMENT + LANG_DETECT_SEGMENT;
+        String UTILS = ML_SEGMENT + UTILS_SEGMENT;
       }
     }
   }
