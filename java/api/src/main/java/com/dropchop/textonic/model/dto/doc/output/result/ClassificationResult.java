@@ -23,7 +23,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @JsonInclude(NON_NULL)
 public class ClassificationResult extends TextResult {
 
-  @JsonProperty("v")
+  @JsonProperty("s")
   @Schema(
     description = "Context dependent classification score."
   )

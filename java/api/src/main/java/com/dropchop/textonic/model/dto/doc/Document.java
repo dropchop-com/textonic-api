@@ -5,12 +5,15 @@ import com.dropchop.recyclone.model.api.marker.HasId;
 import com.dropchop.recyclone.model.api.marker.HasLanguageCode;
 import com.dropchop.recyclone.model.api.marker.HasTitle;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.time.ZonedDateTime;
 import java.util.List;
 
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 /**
@@ -34,9 +37,15 @@ public abstract class Document<S extends Section> implements
 
   private String title;
 
-  @NonNull
   @Singular
+  @JsonInclude(NON_EMPTY)
   private List<S> sections;
+
+  @JsonProperty("vec")
+  @Schema(
+    description = "Vector representation."
+  )
+  List<Double> vector;
 
   private ZonedDateTime created;
 
