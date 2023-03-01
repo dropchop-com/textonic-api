@@ -18,6 +18,7 @@ public class LanguageFamilies {
     indoEu, afroasiatic, turkic, uralic,
     baltoSlav, southESlavic, southWSlavic, eastSlavic, westSlavic, southSlavic, slavic, lechitic, czechSlovak,
                baltic, eastBaltic, westBaltic,
+    paleoBalkan, albanian,
     germanic,  westGermanic, northGermanic, eastScandinavian, westScandinavian, english, highGerman, lowFrankish,
     celtic,    goidelic,
     greek,
@@ -71,6 +72,12 @@ public class LanguageFamilies {
 
     czechSlovak = new LanguageFamily("czech_slovak");
     czechSlovak.addTag(westSlavic);
+
+    paleoBalkan = new LanguageFamily("paleo_balkan");
+    paleoBalkan.addTag(indoEu);
+
+    albanian = new LanguageFamily("albanian");
+    albanian.addTag(paleoBalkan);
 
     germanic = new LanguageFamily("germanic");
     germanic.addTag(indoEu);
@@ -166,6 +173,8 @@ public class LanguageFamilies {
     log.info("\t{}\t{}\t{}", baltic.getId(), baltic.getName(), baltic.getTags().get(0).getUuid());
     log.info("\t{}\t{}\t{}", eastBaltic.getId(), eastBaltic.getName(), eastBaltic.getTags().get(0).getUuid());
     log.info("\t{}\t{}\t{}", westBaltic.getId(), westBaltic.getName(), westBaltic.getTags().get(0).getUuid());
+    log.info("\t{}\t{}\t{}", paleoBalkan.getId(), paleoBalkan.getName(), paleoBalkan.getTags().get(0).getUuid());
+    log.info("\t{}\t{}\t{}", albanian.getId(), albanian.getName(), albanian.getTags().get(0).getUuid());
     log.info("\t{}\t{}\t{}", germanic.getId(), germanic.getName(), germanic.getTags().get(0).getUuid());
     log.info("\t{}\t{}\t{}", westGermanic.getId(), westGermanic.getName(), westGermanic.getTags().get(0).getUuid());
     log.info("\t{}\t{}\t{}", northGermanic.getId(), northGermanic.getName(), northGermanic.getTags().get(0).getUuid());
