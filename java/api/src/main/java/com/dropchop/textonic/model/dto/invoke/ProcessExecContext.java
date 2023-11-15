@@ -1,9 +1,7 @@
 package com.dropchop.textonic.model.dto.invoke;
 
 import com.dropchop.recyclone.model.api.invoke.CommonExecContext;
-import com.dropchop.recyclone.model.api.invoke.DataExecContext;
 import com.dropchop.recyclone.model.api.invoke.ExecContext;
-import com.dropchop.recyclone.model.api.invoke.SecurityExecContext;
 import com.dropchop.recyclone.model.api.security.annotations.Logical;
 import com.dropchop.recyclone.model.dto.invoke.ParamsExecContext;
 import com.dropchop.textonic.model.api.ml.StepCode;
@@ -30,10 +28,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @NoArgsConstructor
 @JsonInclude(NON_NULL)
 public class ProcessExecContext extends ParamsExecContext<ExecContext.Listener>
-  implements
-  CommonExecContext<InputDocument, ExecContext.Listener>,
-  DataExecContext<InputDocument, ExecContext.Listener>,
-  SecurityExecContext {
+  implements CommonExecContext<InputDocument, ExecContext.Listener> {
 
   public static final String MDC_DOC_ID = "docId";
 

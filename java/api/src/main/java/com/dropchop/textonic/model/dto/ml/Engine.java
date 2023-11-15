@@ -4,7 +4,6 @@ import com.dropchop.recyclone.model.dto.base.DtoCode;
 import com.dropchop.textonic.model.api.ml.StepCode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.util.LinkedHashSet;
@@ -21,7 +20,6 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @Getter
 @Setter
 @NoArgsConstructor
-@SuperBuilder
 @JsonInclude(NON_NULL)
 public class Engine extends DtoCode implements com.dropchop.textonic.model.api.ml.Engine<Model> {
 
@@ -40,12 +38,16 @@ public class Engine extends DtoCode implements com.dropchop.textonic.model.api.m
   @Schema(
     description = "Supported analysis steps."
   )
-  @Builder.Default
+
+  @Singular
+  @JsonInclude(NON_EMPTY)
   private Set<StepCode> steps = new TreeSet<>();
 
   @Schema(
     description = "Supported parameters."
   )
-  @Builder.Default
+
+  @Singular
+  @JsonInclude(NON_EMPTY)
   private Set<Parameter> parameters = new LinkedHashSet<>();
 }

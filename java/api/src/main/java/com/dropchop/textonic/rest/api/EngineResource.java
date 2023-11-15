@@ -11,7 +11,7 @@ import com.dropchop.textonic.model.api.security.Constants.Domains;
 import com.dropchop.textonic.model.dto.ml.Engine;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
-import javax.ws.rs.*;
+import jakarta.ws.rs.*;
 import java.util.List;
 
 import static com.dropchop.recyclone.model.api.security.Constants.*;

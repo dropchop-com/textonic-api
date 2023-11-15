@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.dropchop.textonic</groupId>
   <artifactId>client-api</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.35.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Textonic</name>
 
@@ -82,26 +82,22 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <recyclone.version>1.0.0.Alpha</recyclone.version>
+    <recyclone.version>1.35.1</recyclone.version>
     <slf4j.version>1.7.36</slf4j.version>
     <logback.version>1.2.10</logback.version>
     <aspectj.version>1.9.9.1</aspectj.version>
-    <lombok.version>1.18.24</lombok.version>
-    <!--<mapstruct.version>1.4.2.Final</mapstruct.version>-->
-    <mapstruct.version>1.6.0-SNAPSHOT</mapstruct.version>
-    <blaze-persistence.version>1.6.6</blaze-persistence.version>
-    <jackson.version>2.13.3</jackson.version>
-    <quarkus.version>2.13.0.Final</quarkus.version>
-    <junit.version>5.8.2</junit.version>
+    <lombok.version>1.18.28</lombok.version>
+    <jackson.version>2.15.2</jackson.version>
+
+    <jakarta.ws.rs.version>3.1.0</jakarta.ws.rs.version>
+    <jakarta.cdi-api.version>4.0.1</jakarta.cdi-api.version>
+    <jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
+    <jakarta.transaction-api.version>2.0.1</jakarta.transaction-api.version>
+    <microprofile-openapi-api.version>3.1</microprofile-openapi-api.version>
+    <microprofile-config-api.version>3.0.3</microprofile-config-api.version>
+
+    <junit.version>5.9.3</junit.version>
     <jsonassert.version>1.5.1</jsonassert.version>
-    <jakarta.ws.rs.version>2.1.6</jakarta.ws.rs.version>
-    <jakarta.cdi-api.version>2.0.2</jakarta.cdi-api.version>
-    <jakarta.persistence-api>2.2.3</jakarta.persistence-api>
-    <jakarta.servlet-api.version>4.0.3</jakarta.servlet-api.version>
-    <microprofile-openapi-api.version>2.0.1-RC1</microprofile-openapi-api.version>
-    <microprofile-config-api.version>2.0.1</microprofile-config-api.version>
-    <org.modelmapper.version>2.4.5</org.modelmapper.version>
-    <apache.shiro.version>1.9.0</apache.shiro.version>
   </properties>
 
   <repositories>
