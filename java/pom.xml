@@ -24,9 +24,9 @@
   </modules>
 
   <scm>
-    <connection>scm:git:https://gitlab.com/dropchop/textonic/api.git</connection>
-    <developerConnection>scm:git:https://gitlab.com/dropchop/textonic/api.git</developerConnection>
-    <url>https://textonic.io</url>
+    <connection>scm:git:https://github.com/dropchop-com/textonic-api.git</connection>
+    <developerConnection>scm:git:https://github.com/dropchop-com/textonic-api.git</developerConnection>
+    <url>https://github.com/dropchop-com/textonic-api</url>
   </scm>
 
   <developers>
@@ -101,13 +101,6 @@
     <junit.version>5.9.3</junit.version>
     <jsonassert.version>1.5.1</jsonassert.version>
   </properties>
-
-  <repositories>
-    <repository>
-      <id>local-maven-repo</id>
-      <url>file:///${project.basedir}/tmp-local-repo</url>
-    </repository>
-  </repositories>
 
   <dependencyManagement>
     <dependencies>
