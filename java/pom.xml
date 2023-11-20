@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.dropchop.textonic</groupId>
   <artifactId>client-api</artifactId>
-  <version>1.35.4</version>
+  <version>1.35.4-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Textonic</name>
 
@@ -23,10 +24,9 @@
   </modules>
 
   <scm>
-    <connection>scm:git:https://github.com/dropchop-com/textonic-api.git</connection>
-    <developerConnection>scm:git:https://github.com/dropchop-com/textonic-api.git</developerConnection>
-    <url>https://github.com/dropchop-com/textonic-api</url>
-    <tag>client-api-1.35.4</tag>
+    <connection>scm:git:https://gitlab.com/dropchop/textonic/api.git</connection>
+    <developerConnection>scm:git:https://gitlab.com/dropchop/textonic/api.git</developerConnection>
+    <url>https://textonic.io</url>
   </scm>
 
   <developers>
@@ -101,6 +101,13 @@
     <junit.version>5.9.3</junit.version>
     <jsonassert.version>1.5.1</jsonassert.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>local-maven-repo</id>
+      <url>file:///${project.basedir}/tmp-local-repo</url>
+    </repository>
+  </repositories>
 
   <dependencyManagement>
     <dependencies>
