@@ -24,10 +24,9 @@
   </modules>
 
   <scm>
-    <connection>scm:git:https://github.com/dropchop-com/textonic-api.git</connection>
-    <developerConnection>scm:git:https://github.com/dropchop-com/textonic-api.git</developerConnection>
-    <url>https://github.com/dropchop-com/textonic-api</url>
-    <tag>HEAD</tag>
+    <connection>scm:git:https://gitlab.com/dropchop/textonic/api.git</connection>
+    <developerConnection>scm:git:https://gitlab.com/dropchop/textonic/api.git</developerConnection>
+    <url>https://textonic.io</url>
   </scm>
 
   <developers>
