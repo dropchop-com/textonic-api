@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.dropchop.textonic</groupId>
   <artifactId>client-api</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Textonic</name>
 
@@ -26,7 +27,6 @@
     <connection>scm:git:https://gitlab.com/dropchop/textonic/api.git</connection>
     <developerConnection>scm:git:https://gitlab.com/dropchop/textonic/api.git</developerConnection>
     <url>https://textonic.io</url>
-    <tag>client-api-1.0.0</tag>
   </scm>
 
   <developers>
