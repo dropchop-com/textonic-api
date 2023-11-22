@@ -7,8 +7,15 @@
   <parent>
     <groupId>com.dropchop.textonic</groupId>
     <artifactId>client-api</artifactId>
-    <version>1.35.8-SNAPSHOT</version>
+    <version>1.35.7-SNAPSHOT</version>
   </parent>
+
+  <properties>
+    <maven.deploy.skip>false</maven.deploy.skip>
+    <maven.install.skip>false</maven.install.skip>
+    <maven.javadoc.skip>false</maven.javadoc.skip>
+    <maven.source.skip>false</maven.source.skip>
+  </properties>
 
   <dependencies>
     <dependency>
