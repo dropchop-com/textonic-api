@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.dropchop.textonic</groupId>
   <artifactId>client-api</artifactId>
-  <version>1.35.5-SNAPSHOT</version>
+  <version>1.35.7-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Textonic</name>
 
   <description>Dropchop's Textonic Java REST API and Client.</description>
-  <url>https://github.com/ivlcic/recyclone</url>
+  <url>https://github.com/dropchop-com/textonic-api</url>
 
   <licenses>
     <license>
@@ -84,7 +84,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <recyclone.version>1.35.4</recyclone.version>
+    <recyclone.version>1.35.7</recyclone.version>
     <slf4j.version>1.7.36</slf4j.version>
     <logback.version>1.2.10</logback.version>
     <aspectj.version>1.9.9.1</aspectj.version>
@@ -435,6 +435,32 @@
               <id>attach-javadocs</id>
               <goals>
                 <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>flatten-maven-plugin</artifactId>
+          <version>${flatten-plugin.version}</version>
+          <configuration>
+            <flattenMode>oss</flattenMode>
+          </configuration>
+          <executions>
+            <!-- enable flattening -->
+            <execution>
+              <id>flatten</id>
+              <phase>process-resources</phase>
+              <goals>
+                <goal>flatten</goal>
+              </goals>
+            </execution>
+            <!-- ensure proper cleanup -->
+            <execution>
+              <id>flatten.clean</id>
+              <phase>clean</phase>
+              <goals>
+                <goal>clean</goal>
               </goals>
             </execution>
           </executions>
