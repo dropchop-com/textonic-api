@@ -68,6 +68,7 @@
     <gpg-plugin.version>3.0.1</gpg-plugin.version>
     <install-plugin.version>2.5.2</install-plugin.version>
     <deploy-plugin.version>2.8.2</deploy-plugin.version>
+    <flatten-plugin.version>1.5.0</flatten-plugin.version>
     <site-plugin.version>3.9.1</site-plugin.version>
     <project-info-reports-plugin.version>3.1.2</project-info-reports-plugin.version>
     <javadoc-plugin.version>3.3.1</javadoc-plugin.version>
@@ -447,5 +448,33 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <version>${flatten-plugin.version}</version>
+        <configuration>
+          <flattenMode>oss</flattenMode>
+        </configuration>
+        <executions>
+          <!-- enable flattening -->
+          <execution>
+            <id>flatten</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>flatten</goal>
+            </goals>
+          </execution>
+          <!-- ensure proper cleanup -->
+          <execution>
+            <id>flatten.clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 </project>
