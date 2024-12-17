@@ -1,6 +1,6 @@
 package com.dropchop.textonic;
 
-import com.dropchop.recyclone.model.dto.tagging.LanguageFamily;
+import com.dropchop.recyclone.base.dto.model.tagging.LanguageFamily;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -11,8 +11,8 @@ import java.util.ArrayList;
 /**
  * @author Nikola Ivačič <nikola.ivacic@dropchop.org> on 6. 10. 22.
  */
-public class LanguageFamilies {
-  private static final Logger log = LoggerFactory.getLogger(LanguageFamilies.class);
+public class LanguageFamiliesTest {
+  private static final Logger log = LoggerFactory.getLogger(LanguageFamiliesTest.class);
 
   private LanguageFamily
     indoEu, afroasiatic, turkic, uralic,
