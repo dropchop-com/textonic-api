@@ -1,7 +1,7 @@
 package com.dropchop.textonic.model.dto.doc.output.result;
 
-import com.dropchop.recyclone.model.api.base.Dto;
-import com.dropchop.recyclone.model.api.base.ModelWithCode;
+import com.dropchop.recyclone.base.api.model.base.Dto;
+import com.dropchop.recyclone.base.api.model.base.ModelWithCode;
 import com.dropchop.textonic.model.api.ml.Engine;
 import com.dropchop.textonic.model.api.ml.Model;
 import com.dropchop.textonic.model.api.ml.StepCode;

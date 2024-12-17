@@ -1,9 +1,9 @@
 package com.dropchop.textonic.model.dto.doc;
 
-import com.dropchop.recyclone.model.api.base.Dto;
-import com.dropchop.recyclone.model.api.marker.HasId;
-import com.dropchop.recyclone.model.api.marker.HasLanguageCode;
-import com.dropchop.recyclone.model.api.marker.HasTitle;
+import com.dropchop.recyclone.base.api.model.base.Dto;
+import com.dropchop.recyclone.base.api.model.marker.HasId;
+import com.dropchop.recyclone.base.api.model.marker.HasLanguageCode;
+import com.dropchop.recyclone.base.api.model.marker.HasTitle;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
@@ -24,6 +24,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @JsonInclude(NON_NULL)
+@SuppressWarnings("unused")
 public abstract class Document<S extends Section> implements
   Dto, HasId, HasTitle, HasLanguageCode {
 

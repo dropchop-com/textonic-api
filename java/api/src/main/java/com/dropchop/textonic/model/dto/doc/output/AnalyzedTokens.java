@@ -1,6 +1,6 @@
 package com.dropchop.textonic.model.dto.doc.output;
 
-import com.dropchop.recyclone.model.api.base.Dto;
+import com.dropchop.recyclone.base.api.model.base.Dto;
 import com.dropchop.textonic.model.dto.doc.output.result.AnalyzedResult;
 import com.dropchop.textonic.model.dto.doc.output.result.TextSpanResult;
 import com.fasterxml.jackson.annotation.JsonInclude;

@@ -1,8 +1,8 @@
 package com.dropchop.textonic.rest.jackson.client;
 
-import com.dropchop.recyclone.model.api.attr.Attribute;
-import com.dropchop.recyclone.rest.jackson.client.AttributeCompactSerializer;
-import com.dropchop.recyclone.rest.jackson.client.AttributeDeserializer;
+import com.dropchop.recyclone.base.api.model.attr.Attribute;
+import com.dropchop.recyclone.base.jackson.AttributeCompactSerializer;
+import com.dropchop.recyclone.base.jackson.AttributeDeserializer;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

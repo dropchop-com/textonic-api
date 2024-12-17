@@ -1,6 +1,6 @@
 package com.dropchop.textonic.model.dto.doc;
 
-import com.dropchop.recyclone.model.api.base.Dto;
+import com.dropchop.recyclone.base.api.model.base.Dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

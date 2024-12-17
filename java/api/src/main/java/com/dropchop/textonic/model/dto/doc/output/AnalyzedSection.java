@@ -1,6 +1,6 @@
 package com.dropchop.textonic.model.dto.doc.output;
 
-import com.dropchop.recyclone.model.api.marker.HasId;
+import com.dropchop.recyclone.base.api.model.marker.HasId;
 import com.dropchop.textonic.model.dto.doc.*;
 import com.dropchop.textonic.model.dto.doc.output.result.AnalyzedResult;
 import com.fasterxml.jackson.annotation.JsonIgnore;

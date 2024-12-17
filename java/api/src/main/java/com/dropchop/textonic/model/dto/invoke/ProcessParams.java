@@ -1,8 +1,8 @@
 package com.dropchop.textonic.model.dto.invoke;
 
-import com.dropchop.recyclone.model.api.attr.Attribute;
-import com.dropchop.recyclone.model.api.base.Dto;
-import com.dropchop.recyclone.model.api.invoke.Params;
+import com.dropchop.recyclone.base.api.model.attr.Attribute;
+import com.dropchop.recyclone.base.api.model.base.Dto;
+import com.dropchop.recyclone.base.api.model.invoke.Params;
 import com.dropchop.textonic.model.dto.doc.input.InputDocument;
 import com.dropchop.textonic.model.dto.process.ProcessDescriptor;
 import com.fasterxml.jackson.annotation.JsonInclude;

@@ -1,8 +1,8 @@
 package com.dropchop.textonic.model.api.ml;
 
-import com.dropchop.recyclone.model.api.base.Dto;
-import com.dropchop.recyclone.model.api.base.ModelWithCode;
-import com.dropchop.recyclone.model.dto.localization.Language;
+import com.dropchop.recyclone.base.api.model.base.Dto;
+import com.dropchop.recyclone.base.api.model.base.ModelWithCode;
+import com.dropchop.recyclone.base.dto.model.localization.Language;
 import com.dropchop.textonic.model.dto.ml.Licence;
 import com.dropchop.textonic.model.dto.ml.ModelStep;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -56,7 +56,7 @@ public interface Model extends Dto, ModelWithCode, Comparable<ModelWithCode> {
   @JsonIgnore
   default boolean isLanguageAgnostic() {
     List<Language> languages = getLanguages();
-    return languages == null || languages.size() == 0;
+    return languages == null || languages.isEmpty();
   }
 
   @JsonIgnore

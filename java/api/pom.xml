@@ -18,27 +18,20 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
-
+    <!-- general -->
     <dependency>
       <groupId>jakarta.ws.rs</groupId>
       <artifactId>jakarta.ws.rs-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.dropchop.recyclone</groupId>
-      <artifactId>recyclone-rest-jaxrs-api</artifactId>
+      <groupId>org.eclipse.microprofile.openapi</groupId>
+      <artifactId>microprofile-openapi-api</artifactId>
     </dependency>
 
+    <!-- recyclone -->
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
+      <groupId>com.dropchop.recyclone</groupId>
+      <artifactId>recyclone-base-dto-model</artifactId>
     </dependency>
   </dependencies>
 
@@ -53,7 +46,6 @@
         <artifactId>aspectj-maven-plugin</artifactId>
       </plugin>
       <plugin>
-        <!--suppress MavenModelInspection -->
         <artifactId>maven-clean-plugin</artifactId>
       </plugin>
     </plugins>

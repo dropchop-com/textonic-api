@@ -1,9 +1,9 @@
 package com.dropchop.textonic.model.dto.invoke;
 
-import com.dropchop.recyclone.model.api.invoke.CommonExecContext;
-import com.dropchop.recyclone.model.api.invoke.ExecContext;
-import com.dropchop.recyclone.model.api.security.annotations.Logical;
-import com.dropchop.recyclone.model.dto.invoke.ParamsExecContext;
+import com.dropchop.recyclone.base.api.model.invoke.CommonExecContext;
+import com.dropchop.recyclone.base.api.model.invoke.ExecContext;
+import com.dropchop.recyclone.base.api.model.security.annotations.Logical;
+import com.dropchop.recyclone.base.dto.model.invoke.ParamsExecContext;
 import com.dropchop.textonic.model.api.ml.StepCode;
 import com.dropchop.textonic.model.dto.doc.input.InputDocument;
 import com.dropchop.textonic.model.dto.process.Analysis;
@@ -38,6 +38,14 @@ public class ProcessExecContext extends ParamsExecContext<ExecContext.Listener>
   private List<String> requiredPermissions;
 
   private Logical requiredPermissionsOp = Logical.AND;
+
+  private List<String> requiredRoles;
+
+  private Logical requiredRolesOp = Logical.AND;
+
+  private Boolean requiredGuest = Boolean.FALSE;
+
+  private Boolean requiredAuthenticated = Boolean.FALSE;
 
   private ProcessResult result;
 

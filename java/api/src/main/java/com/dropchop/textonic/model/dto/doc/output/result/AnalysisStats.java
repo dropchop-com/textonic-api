@@ -1,6 +1,6 @@
 package com.dropchop.textonic.model.dto.doc.output.result;
 
-import com.dropchop.recyclone.model.api.base.Dto;
+import com.dropchop.recyclone.base.api.model.base.Dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

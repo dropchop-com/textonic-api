@@ -1,7 +1,7 @@
 package com.dropchop.textonic.model.dto.ml;
 
-import com.dropchop.recyclone.model.dto.base.DtoCode;
-import com.dropchop.recyclone.model.dto.localization.Language;
+import com.dropchop.recyclone.base.dto.model.base.DtoCode;
+import com.dropchop.recyclone.base.dto.model.localization.Language;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

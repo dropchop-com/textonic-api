@@ -1,7 +1,7 @@
 package com.dropchop.textonic.model.api.ml;
 
-import com.dropchop.recyclone.model.api.base.Dto;
-import com.dropchop.recyclone.model.api.base.ModelWithCode;
+import com.dropchop.recyclone.base.api.model.base.Dto;
+import com.dropchop.recyclone.base.api.model.base.ModelWithCode;
 
 import java.util.List;
 import java.util.Set;

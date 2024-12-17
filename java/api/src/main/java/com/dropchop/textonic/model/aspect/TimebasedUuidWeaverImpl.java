@@ -1,7 +1,8 @@
 package com.dropchop.textonic.model.aspect;
 
-import com.dropchop.recyclone.model.api.aspect.TimebasedUuidWeaver;
-import com.dropchop.recyclone.model.api.utils.Uuid;
+import com.dropchop.recyclone.base.api.model.aspect.TimebasedUuidWeaver;
+import com.dropchop.recyclone.base.api.model.utils.Uuid;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 
@@ -13,6 +14,7 @@ import java.util.UUID;
 /**
  * @author Nikola Ivačič <nikola.ivacic@dropchop.org> on 7. 01. 22.
  */
+@Slf4j
 @Aspect
 public class TimebasedUuidWeaverImpl implements TimebasedUuidWeaver {
 
@@ -46,12 +48,12 @@ public class TimebasedUuidWeaverImpl implements TimebasedUuidWeaver {
     argNames = "oModel,uuid")
   public void changeClassWithUuid(com.dropchop.textonic.model.dto.doc.output.AnalyzedDocument oModel, UUID uuid) {
     if (uuid == null) {
-      TimebasedUuidWeaver.log.warn("Uuid for [{}] is null will not set ZonedDateTime received.", oModel);
+      log.warn("Uuid for [{}] is null will not set ZonedDateTime received.", oModel);
     } else {
       if (uuid.version() == 1) {
         Instant instant = Uuid.toInstant(uuid);
         ZonedDateTime received = instant.atZone(ZoneId.systemDefault());
-        TimebasedUuidWeaver.log.trace("Will change received {} with {} based on uuid {}", oModel.getUuid(), received, uuid);
+        log.trace("Will change received {} with {} based on uuid {}", oModel.getUuid(), received, uuid);
         oModel.setReceived(received);
       }
     }

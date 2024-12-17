@@ -62,11 +62,6 @@ public class AnalyzedSentence extends AnalyzedSegment {
   )
   private AnalyzedTokens tokens;
 
-  @Override
-  public String toString() {
-    return this.getClass().getSimpleName() + ":" + getId();
-  }
-
   public void initTokens(Engine<?> engine, Model model, int size) {
     AnalyzedTokens tokens = this.getTokens();
     if (tokens == null) {

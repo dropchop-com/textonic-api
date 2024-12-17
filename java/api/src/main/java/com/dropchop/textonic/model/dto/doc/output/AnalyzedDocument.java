@@ -1,7 +1,7 @@
 package com.dropchop.textonic.model.dto.doc.output;
 
-import com.dropchop.recyclone.model.api.marker.HasUuid;
-import com.dropchop.recyclone.model.api.marker.HasUuidV1;
+import com.dropchop.recyclone.base.api.model.marker.HasUuid;
+import com.dropchop.recyclone.base.api.model.marker.HasUuidV1;
 import com.dropchop.textonic.model.dto.doc.Document;
 import com.dropchop.textonic.model.dto.doc.output.result.AnalysisStats;
 import com.dropchop.textonic.model.dto.doc.output.result.AnalyzedResult;

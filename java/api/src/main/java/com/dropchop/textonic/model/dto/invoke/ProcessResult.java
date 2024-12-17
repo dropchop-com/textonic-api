@@ -1,6 +1,6 @@
 package com.dropchop.textonic.model.dto.invoke;
 
-import com.dropchop.recyclone.model.dto.rest.Result;
+import com.dropchop.recyclone.base.dto.model.rest.Result;
 import com.dropchop.textonic.model.dto.doc.output.AnalyzedDocument;
 import com.dropchop.textonic.model.dto.doc.output.result.AnalysisStats;
 import com.dropchop.textonic.model.dto.doc.output.result.AnalyzedResult;
