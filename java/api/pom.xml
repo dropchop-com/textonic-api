@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.dropchop.textonic</groupId>
     <artifactId>client-api</artifactId>
-    <version>1.317.10</version>
+    <version>1.317.11-SNAPSHOT</version>
   </parent>
 
   <properties>
